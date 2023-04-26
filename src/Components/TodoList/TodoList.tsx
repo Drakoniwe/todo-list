@@ -51,8 +51,6 @@ const TodoList: React.FC = () => {
       label: string
     }>
   ): void => {
-    console.log(e)
-
     if (e !== null) {
       setSelectedCategory({ label: e.label, value: e.value })
     } else {
