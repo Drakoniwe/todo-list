@@ -1,0 +1,22 @@
+/* stylelint-disable scss/at-mixin-pattern */
+
+// Small devices (landscape phones, 576px and up)
+@mixin Mobile {
+  @media (width >= 576px) {
+    @content;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@mixin Tablet {
+  @media (width >= 768px) {
+    @content;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@mixin Desktop {
+  @media (width >= 992px) {
+    @content;
+  }
+}

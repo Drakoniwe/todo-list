@@ -1,0 +1,59 @@
+@import '../../style/mixins';
+
+.TodoItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: 10px;
+  padding: 5px;
+  gap: 5px;
+
+  @include Desktop {
+    display: flex;
+  }
+
+  &:hover {
+    background: radial-gradient(
+      circle,
+      rgb(175 130 150 / 100%) 36%,
+      rgb(148 187 233 / 100%) 100%
+    );
+    border: 1px solid black;
+    border-radius: var(--border-radius);
+  }
+
+  &-Title {
+    word-break: break-all;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: large;
+    box-sizing: border-box;
+  }
+
+  &-Details {
+    width: 100%;
+  }
+
+  &-SelectContainer {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+
+    .react-select {
+      &__indicator {
+        padding: 0;
+      }
+    }
+  }
+}
+
+._delete {
+  &:hover {
+    background-color: red;
+  }
+}
+
+._edit {
+  &:hover {
+    background-color: violet;
+  }
+}

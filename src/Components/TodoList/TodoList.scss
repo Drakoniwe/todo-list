@@ -1,0 +1,33 @@
+@import '../../style/mixins';
+
+.TodoList {
+  &-ActionButtons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  &-AddTodo {
+    display: flex;
+    margin-bottom: 20px;
+
+    button {
+      min-width: 50px;
+      margin-left: 10px;
+      font-weight: bold;
+
+      &:hover:not([disabled]) {
+        background: lightgreen;
+      }
+
+      @include Desktop {
+        min-width: 100px;
+      }
+    }
+  }
+
+  &-FilterText {
+    text-align: center;
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../style/mixins';
+
+.TodoComponent {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: radial-gradient(
+    circle,
+    rgb(238 174 202 / 100%) 0%,
+    rgb(148 187 233 / 100%) 100%
+  );
+
+  @include Desktop {
+    font-size: larger;
+  }
+
+  &-Header {
+    text-align: center;
+    margin-block: 10px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    border: 1px solid black;
+    border-radius: var(--border-radius);
+    background: transparent;
+    font-size: medium;
+    padding: 5px;
+    cursor: pointer;
+
+    @include Desktop {
+      font-size: large;
+    }
+  }
+
+  input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: medium;
+    min-height: 25px;
+    padding-left: 10px;
+  }
+}
