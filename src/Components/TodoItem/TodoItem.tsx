@@ -9,9 +9,13 @@ import { Priority } from '../../Interfaces/ITodo'
 
 interface TodoItemProps {
   item: ITodo
+  categoryOptions: Array<{
+    value: string
+    label: string
+  }>
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({ item }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ item, categoryOptions }) => {
   const [input, setInput] = useState('')
   const [isGettingEdited, setIsGettingEdited] = useState(false)
 
@@ -26,8 +30,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ item }) => {
   }>({ value: '', label: '' })
 
   const {
-    todoStore: { todoList },
-    miscStore: { categories }
+    todoStore: { todoList }
   } = useStore()
 
   const {
@@ -42,11 +45,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ item }) => {
     { value: Priority.Medium, label: 'Medium' },
     { value: Priority.High, label: 'High' }
   ]
-
-  // For categories we need to get them from the state and map it so react-select accepts it
-  const categoryOptions = categories.map((item) => {
-    return { value: item.id, label: item.title }
-  })
 
   const handleItemDelete = action(() => {
     todoList.remove(item)
